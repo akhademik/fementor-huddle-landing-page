@@ -1,0 +1,43 @@
+@use '../2-helper/variables' as *;
+@use '../2-helper/mixins' as *;
+
+.wrapper__header {
+	background-image: url(/images/bg-hero-mobile.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+// main div to control the max width, DO NOT ADJUST
+.header {
+	width: 85%;
+	margin: 0 auto;
+}
+
+//top nav-bar
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	&--img {
+		width: 30%;
+		object-fit: contain;
+	}
+}
+
+.header__content {
+	text-align: center;
+	h2 {
+		line-height: 1.4;
+		color: $clr-n-dark-cyan;
+		font-family: $base-font-heading;
+	}
+
+	p {
+		color: $clr-n-grayish-blue;
+		font-weight: 600;
+	}
+
+	img {
+		width: 100%;
+		object-fit: contain;
+	}
+}

@@ -1,0 +1,12 @@
+@use '../2-helper/variables' as *;
+@use '../2-helper/mixins' as *;
+
+.nav {
+	padding: 2rem 0;
+	&__menu {
+		color: $clr-n-pale-cyan;
+		li {
+			padding-bottom: 1rem;
+		}
+	}
+}

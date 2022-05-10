@@ -1,0 +1,84 @@
+//*************************************
+//**        COLORS VARIABLES         **
+//*************************************
+//Primary colors
+$clr-p-pink: hsl(322, 100%, 66%); //use for what ...
+
+//Neutral colors
+$clr-n-pale-cyan: hsl(193, 100%, 96%); //use for what ...
+$clr-n-dark-cyan: hsl(192, 100%, 9%); //use for what ...
+$clr-n-grayish-blue: hsl(208, 11%, 55%); //use for what ...
+
+// Color pallette from colors to create background and text colors (Optionals)
+// $colors: (
+// 	'blue': $clr-blue,
+// 	'indigo': $clr-indigo,
+// 	'purple': $clr-purple,
+// );
+
+//*************************************
+//**      FONT-SIZE VARIABLES        **
+//*************************************
+$base-font-size-mobile: 16px; //default font size for mobile
+$base-font-size-desk: 18px; //default font size for desktop
+
+$fs-sm: calc(var(--base-font-size) * 0.75); //--base-font-size is css variable
+$fs-lg: calc(var(--base-font-size) * 1.5);
+$fs-xl: calc(var(--base-font-size) * 2);
+$fs-xxl: calc(var(--base-font-size) * 3);
+
+$base-font-body: 'Open Sans', sans-serif;
+$base-font-heading: 'Poppins', sans-serif;
+
+//*************************************
+//**        SPACER VARIABLES         **
+//*************************************
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+$base-column-gap: 1.5rem;
+
+//*************************************
+//**        BORDER VARIABLES         **
+//*************************************
+$base-border-thickness: 1px;
+$base-border-color: #dee2e6;
+$base-border-radius: 20px;
+
+//*************************************
+//**     BREAKPOINTS VARIABLES       **
+//*************************************
+//Separate variables for breakpoints
+$grid__bp-sm: 576;
+$grid__bp-md: 768;
+$grid__bp-lg: 992;
+$grid__bp-xl: 1200;
+
+//Breakpoints array for mixins
+$breakpoints: (
+	'sm': $grid__bp-sm,
+	'md': $grid__bp-md,
+	'lg': $grid__bp-lg,
+	'xl': $grid__bp-xl,
+);
+
+//*************************************
+//**        ALIGNMENT RULES          **
+//*************************************
+//Alignment variables for CONTENT
+$alignContent: (
+	'center': 'center',
+	'stretch': 'stretch',
+	'between': 'space-between',
+	'around': 'space-around',
+	'start': 'flex-start',
+	'end': 'flex-end',
+);
+
+//Alignment variables for ITEMS
+$alignItems: (
+	'center': 'center',
+	'start': 'flex-start',
+	'end': 'flex-end',
+	'baseline': 'baseline',
+	'stretch': 'stretch',
+);

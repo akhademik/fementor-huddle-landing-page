@@ -1,0 +1,41 @@
+@use '../2-helper/variables' as *;
+@use '../2-helper/mixins' as *;
+
+.middle {
+	width: 85%;
+	margin: 0 auto;
+}
+
+.cards {
+	@include bs_base;
+	text-align: center;
+	border-radius: 0.7rem;
+	margin-bottom: 2rem;
+	color: $clr-n-grayish-blue;
+	font-weight: 400;
+	//top cards push top 2 rem
+	&:first-of-type {
+		margin-top: 2rem;
+	}
+	&:last-of-type {
+		margin-bottom: 7rem;
+	}
+	//cover img scale to fit the div
+	img {
+		width: 80%;
+		object-fit: contain;
+		margin: 2.5rem 0;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-family: $base-font-heading;
+		font-size: $fs-lg;
+		color: $clr-n-dark-cyan;
+		// padding-bottom: 2rem;
+	}
+	&__content {
+		font-size: 0.85rem;
+		padding: 2rem 2rem;
+	}
+}

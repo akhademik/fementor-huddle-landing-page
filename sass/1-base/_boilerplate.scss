@@ -1,0 +1,30 @@
+/* Normalize */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button {
+	border-style: none;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+	li {
+		margin: 0;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}

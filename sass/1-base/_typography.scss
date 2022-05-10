@@ -1,0 +1,17 @@
+@use '../2-helper/variables' as *;
+@use '../2-helper/mixins' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap');
+
+html {
+	--base-font-size: #{$base-font-size-mobile};
+	font-family: 'Open Sans', sans-serif;
+	font-size: var(--base-font-size);
+	@include mq(lg) {
+		--base-font-size: #{$base-font-size-desk};
+	}
+}
+
+button {
+	font-family: 'Poppins', sans-serif;
+}

@@ -1,0 +1,187 @@
+@use 'sass:math';
+@use 'variables' as *;
+@use 'mixins' as *;
+
+//***********************************************
+//**     Generate SPACER (PADDING-MARGIN)      **
+//***********************************************
+//**     px  mx: for left + right							 **
+//**     py  my: for top + bottom              **
+//**   l,r,t,b : Left, Right, Top, Bottom      **
+//***********************************************
+//Declare prefix variables
+$spacerAmounts: (1, 2, 3, 4, 5, auto);
+
+//Start to generate
+@each $spacer in $spacerAmounts {
+	@if $spacer==auto {
+		.m-#{$spacer} {
+			margin: #{$spacer};
+		}
+
+		.mx-#{$spacer} {
+			margin-left: #{$spacer};
+			margin-right: #{$spacer};
+		}
+
+		.my-#{$spacer} {
+			margin-top: #{$spacer};
+			margin-bottom: #{$spacer};
+		}
+
+		.ml-#{$spacer} {
+			margin-left: #{$spacer};
+		}
+
+		.mr-#{$spacer} {
+			margin-right: #{$spacer};
+		}
+
+		.mb-#{$spacer} {
+			margin-bottom: #{$spacer};
+		}
+
+		.mt-#{$spacer} {
+			margin-top: #{$spacer};
+		}
+	} @else {
+		.m-#{$spacer} {
+			margin: $spacer * 2 * $base-margin;
+		}
+		.mx-#{$spacer} {
+			margin-left: $spacer * 2 * $base-margin;
+			margin-right: $spacer * 2 * $base-margin;
+		}
+
+		.my-#{$spacer} {
+			margin-top: $spacer * 2 * $base-margin;
+			margin-bottom: $spacer * 2 * $base-margin;
+		}
+
+		.ml-#{$spacer} {
+			margin-left: $spacer * 2 * $base-margin;
+		}
+
+		.mr-#{$spacer} {
+			margin-right: $spacer * 2 * $base-margin;
+		}
+
+		.mb-#{$spacer} {
+			margin-bottom: $spacer * 2 * $base-margin;
+		}
+
+		.mt-#{$spacer} {
+			margin-top: $spacer * 2 * $base-margin;
+		}
+
+		.p-#{$spacer} {
+			padding: $spacer * 2 * $base-margin;
+		}
+
+		.px-#{$spacer} {
+			padding-left: $spacer * 2 * $base-padding;
+			padding-right: $spacer * 2 * $base-padding;
+		}
+
+		.py-#{$spacer} {
+			padding-top: $spacer * 2 * $base-padding;
+			padding-bottom: $spacer * 2 * $base-padding;
+		}
+
+		.pl-#{$spacer} {
+			padding-left: $spacer * 2 * $base-padding;
+		}
+
+		.pr-#{$spacer} {
+			padding-right: $spacer * 2 * $base-padding;
+		}
+
+		.pb-#{$spacer} {
+			padding-bottom: $spacer * 2 * $base-padding;
+		}
+
+		.pt-#{$spacer} {
+			padding-top: $spacer * 2 * $base-padding;
+		}
+	}
+}
+
+//***********************************************
+//**          Generate OPACITY classes         **
+//***********************************************
+//**     o and percentage of opacity  				 **
+//***********************************************
+//Declare prefix variables in percentage
+$opaqueAmounts: (10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+
+//Start to generate
+@each $opaque in $opaqueAmounts {
+	.o-#{$opaque} {
+		opacity: $opaque * 0.01;
+	}
+}
+
+//***********************************************
+//**     Generate BORDER-RADIUS classes        **
+//***********************************************
+//Declare prefix variables in percentage
+$bradiusAmounts: (
+	'xs': math.div($base-border-radius, 4),
+	'sm': math.div($base-border-radius, 2),
+	'base': $base-border-radius,
+	'lg': $base-border-radius * 2,
+	'round': 50%,
+);
+//Start to generate
+@each $key, $value in $bradiusAmounts {
+	.br-#{$key} {
+		border-radius: $value;
+	}
+}
+
+//******************************
+
+//Select where to have the border
+$borderPlus: ('top', 'right', 'bottom', 'left', 0);
+@each $prefix, $val in $borderPlus {
+	@if $prefix == 0 {
+		.border {
+			border: $base-border-thickness solid $base-border-color;
+		}
+	} @else {
+		.border-#{$prefix} {
+			border-#{$prefix}: $base-border-thickness solid $base-border-color;
+		}
+	}
+}
+
+// //border color
+// @each $key, $val in $colors {
+// 	.border-#{$key} {
+// 		border-color: $val;
+// 	}
+// }
+
+//Select where NOT HAVE the border
+@each $prefix, $val in $borderPlus {
+	@if $prefix == 0 {
+		.border-0 {
+			border: 0;
+		}
+	} @else {
+		.border-#{$prefix}-0 {
+			border-#{$prefix}: 0;
+		}
+	}
+}
+
+//***********************************************
+//**     Generate Text Alignment classes       **
+//***********************************************
+$textAlign: (center, left, right, justify);
+//in all screen size
+@each $val in $textAlign {
+	.txt-#{$val} {
+		text-align: #{$val};
+	}
+}

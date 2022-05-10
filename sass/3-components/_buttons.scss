@@ -1,0 +1,21 @@
+@use '../2-helper/variables' as *;
+@use '../2-helper/mixins' as *;
+
+.btn {
+	background-color: white;
+	border-radius: $base-border-radius;
+	padding: 0.2rem 1.1rem;
+	border: 1px solid transparent;
+	@include bs_base;
+	&:hover,
+	&:focus {
+		opacity: 0.5;
+	}
+}
+
+.btn-pink {
+	background-color: $clr-p-pink;
+	font-weight: 300;
+	color: white;
+	padding: 0.3rem 3rem;
+}

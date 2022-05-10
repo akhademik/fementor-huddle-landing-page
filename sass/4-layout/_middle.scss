@@ -3,7 +3,11 @@
 
 .middle {
 	width: 85%;
+	max-width: 475px;
 	margin: 0 auto;
+	@include mq(sm) {
+		max-width: 820px;
+	}
 }
 
 .cards {
@@ -13,6 +17,12 @@
 	margin-bottom: 2rem;
 	color: $clr-n-grayish-blue;
 	font-weight: 400;
+	@include mq(sm) {
+		display: grid;
+		grid-template-columns: 1.5fr 350px;
+		gap: 1rem;
+		text-align: left;
+	}
 	//top cards push top 2 rem
 	&:first-of-type {
 		margin-top: 2rem;
@@ -25,6 +35,10 @@
 		width: 80%;
 		object-fit: contain;
 		margin: 2.5rem 0;
+		@include mq(sm) {
+			grid-column: 2;
+			grid-row: span 2;
+		}
 	}
 
 	&__title {
@@ -32,10 +46,14 @@
 		font-family: $base-font-heading;
 		font-size: $fs-lg;
 		color: $clr-n-dark-cyan;
-		// padding-bottom: 2rem;
+		@include mq(sm) {
+			grid-row: 1;
+			align-self: flex-end;
+			padding-left: 2rem;
+		}
 	}
 	&__content {
 		font-size: 0.85rem;
-		padding: 2rem 2rem;
+		padding: 0 2rem;
 	}
 }

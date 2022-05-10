@@ -5,12 +5,19 @@
 	background-image: url(/images/bg-hero-mobile.svg);
 	background-repeat: no-repeat;
 	background-size: cover;
+	@include mq(sm) {
+		background-image: url(/images/bg-hero-desktop.svg);
+	}
 }
 
 // main div to control the max width, DO NOT ADJUST
 .header {
 	width: 85%;
+	max-width: 475px;
 	margin: 0 auto;
+	@include mq(sm) {
+		max-width: 872px;
+	}
 }
 
 //top nav-bar
@@ -20,24 +27,58 @@
 	&--img {
 		width: 30%;
 		object-fit: contain;
+		@include mq(sm) {
+			max-width: 20%;
+		}
 	}
 }
 
 .header__content {
 	text-align: center;
+	@include mq(sm) {
+		display: grid;
+		grid-template-columns: 20rem 1fr;
+		text-align: left;
+		gap: 1rem;
+		padding-bottom: 4rem;
+	}
 	h2 {
 		line-height: 1.4;
 		color: $clr-n-dark-cyan;
 		font-family: $base-font-heading;
+		padding-bottom: 2rem;
+		@include mq(sm) {
+			padding: 0;
+			align-self: end;
+		}
 	}
 
 	p {
 		color: $clr-n-grayish-blue;
 		font-weight: 600;
+		padding-bottom: 2rem;
+		@include mq(sm) {
+			grid-row: 2;
+			font-size: $fs-sm;
+			padding: 0;
+		}
+	}
+
+	button {
+		@include mq(sm) {
+			grid-row: 3;
+			max-width: 15rem;
+		}
 	}
 
 	img {
 		width: 100%;
 		object-fit: contain;
+		padding-bottom: 2rem;
+		@include mq(sm) {
+			height: 100%;
+			grid-row: span 3;
+			padding: 0;
+		}
 	}
 }
